@@ -224,12 +224,12 @@ def absolute_value(scalar: complex or float) -> complex or float:
     Returns:
         The positive absolute value of a scalar stored as a complex or a float number.
     """
-    result: complex or float = abs(scalar)
+    result: complex or float = ((scalar.real**2 + scalar.imag**2)**(1/2))
     return result
 
 #test:
-test_scalar_01 = -3
-test_scalar_02 = 2
+test_scalar_01 = -3j+4
+test_scalar_02 = -2
 
 print(absolute_value(test_scalar_01))
 print(absolute_value(test_scalar_02))
