@@ -50,7 +50,7 @@ A function which takes as it's arguments a vector stored as a list and a
 scalar, and returns the scalar vector multiplication stored as a list.
 """
 
-def scalar_vec_multi(vector: list[float], scalar: float) -> list[float]:
+def scalar_vec_multi(vector: list[float], scalar: float) -> list:
     """Multplies the input scalar and the input vector.
 
     Creates a result vector, called result, as an empty list as a copy of 
@@ -195,6 +195,8 @@ def mat_multi(matrix_a: list[float], matrix_b: list[float]) -> list[list[float]]
          result.append(mat_vec_multi(matrix_a, matrix_b[index]))
     return result
 
+
+
 #HW_04
 
 """
@@ -226,14 +228,6 @@ def absolute_value(scalar: complex or float) -> complex or float:
     """
     result: complex or float = ((scalar.real**2 + scalar.imag**2)**(1/2))
     return result
-
-#test:
-test_scalar_01 = -3j+4
-test_scalar_02 = -2
-
-print(absolute_value(test_scalar_01))
-print(absolute_value(test_scalar_02))
-
 
 #2
 """
@@ -276,13 +270,6 @@ def p_norm(vector:list[float], p: int = 2) -> float:
     result = result**(abs(1/p))
     return result
 
-#test:
-test_vector_01 = [1, 2, 3]
-test_vector_02 = [2, 3, 4]
-
-print(p_norm(test_vector_01))
-print(p_norm(test_vector_02))
-
 #3
 """
 A function which takes as it's argument a vector stored as a list and
@@ -308,13 +295,6 @@ def infinity_norm(vector: list[float]) -> float:
     for element in range(len(vector)):
         result.append(abs(vector[element]))
     return float(max(result))
-
-#test:
-test_vector_01 = [1, 2, 3]
-test_vector_02 = [2, 3, 4]
-
-print(infinity_norm(test_vector_01))
-print(infinity_norm(test_vector_02))
 
 #4
 """
@@ -354,14 +334,6 @@ def input_vector_norm(vector: list[float], p: float = 2, boolean: bool = False) 
     else: 
         return float(infinity_norm(vector))
 
-#test
-test_vector_03 = [3, 2, 1]
-test_vector_04 = [1, -2, 3]
-
-print(input_vector_norm(test_vector_03, 2, True))
-print(input_vector_norm(test_vector_04, 2, True))
-
-
 #5
 """
 A function which takes as it's arguments two vectors, stored as lists. This
@@ -389,14 +361,3 @@ def inner_product(vector_a: list[complex or float], vector_b: list[complex or fl
     for index in range(len(vector_a)):
         result += vector_a[index]*vector_b[index]
     return result
-
-#test
-test_vector_05 = [1, 2, 3j]
-test_vector_06 = [2, 3j, 4]
-# dot product = 1(2) + 2(3j) + 3j(4) = 2 + 8j
-test_vector_07 = [3, 2, 1]
-test_vector_08 = [-3, 4, 1]
-# dot product = 3(-3) + 2(4) + 1(1) = 0
-
-print(inner_product(test_vector_05, test_vector_06))
-print(inner_product(test_vector_07, test_vector_08))
