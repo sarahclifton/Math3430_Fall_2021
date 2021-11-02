@@ -84,3 +84,45 @@ def test_mat_multi():
     #matrix_d = LA.matrix_d
     #[[3(1) + 3(3), 2(1) + 2(3)], [3(2) + 3(3), 2(2) + 2(3)]] = [[12, 8], [15, 10]]
     assert LA.mat_multi(matrix_c, matrix_d) == [[12, 8], [15, 10]]
+
+
+#HW 4
+
+#1
+test_scalar_01 = -3j+4
+test_scalar_02 = -2
+def test_absolute_value():
+    assert LA.absolute_value(test_scalar_01) == 5
+    assert LA.absolute_value(test_scalar_02) == 2
+
+#2
+test_vector_01 = [1, 2, 3]
+test_vector_02 = [2, 3, 4]
+def test_p_norm():
+    assert LA.p_norm(test_vector_01) == 3.7416573867739413
+    assert LA.p_norm(test_vector_02) == 5.385164807134504
+
+#3
+test_vector_01 = [1, 2, 3]
+test_vector_02 = [2, 3, 4]
+def test_infinity_norm():
+    assert LA.infinity_norm(test_vector_01) == 3
+    assert LA.infinity_norm(test_vector_02) == 4
+
+#4
+test_vector_03 = [3, 2, 1]
+test_vector_04 = [1, -2, 3]
+def test_input_vector_norm():
+    assert LA.input_vector_norm(test_vector_03, 2, True) == 3
+    assert LA.input_vector_norm(test_vector_04, 2, True) == 3
+
+#5
+test_vector_05 = [1, 2, 3j]
+test_vector_06 = [2, 3j, 4]
+test_vector_07 = [3, 2, 1]
+test_vector_08 = [-3, 4, 1]
+def test_inner_product():
+    #dot product = 1(2) + 2(3j) + 3j(4) = 2 + 18j
+    assert LA.inner_product(test_vector_05, test_vector_06) == 2 + (18j)
+    #dot product = 3(-3) + 2(4) + 1(1) = 0
+    assert LA.inner_product(test_vector_07, test_vector_08) == 0
