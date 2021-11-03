@@ -1,5 +1,4 @@
 import QR
-import HW06
 import pytest
 
 matrix_01 = ([[1, 0, 1], [2, 1, 0]])
@@ -19,6 +18,6 @@ def test_stable_gram_schmidt():
     assert QR.stable_gram_schmidt(matrix_02) == [[[1, 0], [0, -1]], [[1, 0], [-5, 5]]]
 
 def test_orthonormalize():
-    assert HW06.orthonormalize(matrix_01) == [[0.7071067811865475, 0, 0.7071067811865475], 
+    assert QR.orthonormalize(matrix_01) == [[0.7071067811865475, 0, 0.7071067811865475], 
                                                     [0.577350269189626, 0.5773502691896258, -0.5773502691896257]]
-    assert HW06.orthonormalize(matrix_02) == [[1, 0], [0, -1]]
+    assert QR.orthonormalize(matrix_02) == [[1, 0], [0, -1]]
