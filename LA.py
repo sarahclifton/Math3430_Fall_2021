@@ -50,7 +50,7 @@ A function which takes as it's arguments a vector stored as a list and a
 scalar, and returns the scalar vector multiplication stored as a list.
 """
 
-def scalar_vec_multi(vector: list[float], scalar: float) -> list:
+def scalar_vec_multi(vector: list, scalar: float) -> list:
     """Multplies the input scalar and the input vector.
 
     Creates a result vector, called result, as an empty list as a copy of 
@@ -64,7 +64,7 @@ def scalar_vec_multi(vector: list[float], scalar: float) -> list:
     Returns:
         The product of the input scalar and the input vector stored as a list. 
     """
-    result: list[float] = []
+    result: list = []
     for index in range(len(vector)):
         result.append(vector[index] * scalar)
     return result
@@ -124,9 +124,10 @@ def add_matrix(matrix_a: list[list[float]], matrix_b: list[list[float]]) -> list
     Returns:
         The sum of the two input matrices.
     """
-    result: list[list[float]] = [0 for element in matrix_a]
-    for index in range(len(result)):
-        result[index] = add_vectors(matrix_a[index], matrix_b[index])
+    result: list = []
+    for index in range(len(matrix_a)):
+        x = add_vectors(matrix_a[index], matrix_b[index])
+        result.append(x)
     return result
 
 #4
