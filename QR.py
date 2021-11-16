@@ -267,7 +267,7 @@ def F_builder(vector_a: list) -> list:
     return y
 
 
-def Q_builder(matrix_a: list, k: int) -> list:
+def Q_builder(matrix_a: list[list], k: int) -> list:
     """Creates the Q_builder function
 
     First, we set the elements of the input matrix to zero.
@@ -279,7 +279,10 @@ def Q_builder(matrix_a: list, k: int) -> list:
     plus index and the scalar plus element of matix_a. Set v equal
     to the V_builder of the first element of Q. Set f equal to the
     F_builder of v. Then, set Q_builder equal to the identity with
-    the length of matrix_a. 
+    the length of matrix_a. For the inde in the range of the scalar
+    to the length of Q_builder, overwrite the index and element of
+    Q_builder with the index minus the scalr and the element minus
+    the scalar of f. Return the desired result.
 
     Args:
         matrix_a: A matrix stored as a list of lists.
@@ -302,10 +305,19 @@ def Q_builder(matrix_a: list, k: int) -> list:
     return Q_builder
 
 
-def householder(matrix_a: list) -> list:
+def householder(matrix_a: list[list]) -> list:
     """Creates the householder function
 
-
+    First set R equal to the deep_copy of matrix_a.
+    Then, set Q_list to an empty set. For every element
+    in range of the length of R, set Q_temp equal to the
+    Q_builder of R and k, set R equal to the mat_multi of
+    Q_temp and R, and append Q_list to Q_temp. Set Q equal
+    to the negatove Q_list and the conjugate_transpose of
+    the first element of Q_list. For the index in the range
+    of 1 to the length of Q_list, set Q equal to the mat_multi
+    of Q anf the conjugate_transpose of the index of Q_list.
+    Return the desired result.
 
     Args:
         matrix_a: a matrix stored as a list of lists.
@@ -322,6 +334,5 @@ def householder(matrix_a: list) -> list:
     Q: list = Q_list[-1]
     Q: list = conjugate_transpose(Q_list[0])
     for index in range(1, len(Q_list)):
-        ct = conjugate_transpose(Q_list[index])
-        Q = LA.mat_multi(Q, ct)
+        Q = LA.mat_multi(Q, conjugate_transpose(Q_list[index]))
     return [Q, R]
