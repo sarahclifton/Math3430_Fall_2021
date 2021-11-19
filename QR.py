@@ -1,6 +1,8 @@
 import LA
 
 
+#HW 05
+
 def unstable_gram_schmidt(matrix_a: list[list]) -> list[list]: 
     """Computes QR factorization using the unstable Gram-Schmidt process. 
 
@@ -76,6 +78,8 @@ def stable_gram_schmidt(matrix_a: list[list]) -> list[list]:
     return [Q, R]
 
 
+#HW 06
+
 def orthonormalize(matrix_a: list[list]) -> list[list]:
     """Orthonormalizes a list of vectors.
 
@@ -139,7 +143,7 @@ def conjugate_transpose(matrix_a):
             result[x][y] = matrix_a[x][y].conjugate()
     for index in range(len(matrix_a[0])):
         for element in range(len(matrix_a)):
-            temp[index][element] = result[index][element]
+            temp[index][element] = result[element][index]
     return temp
 
 
