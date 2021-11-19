@@ -335,5 +335,3 @@ def householder(matrix_a: list[list]) -> list:
     for index in range(1, len(Q_list)):
         Q = LA.mat_multi(Q, conjugate_transpose(Q_list[index]))
     return [Q, R]
-
-print(householder([[1, 0], [-5, -5]]))
