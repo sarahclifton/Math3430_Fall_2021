@@ -132,16 +132,15 @@ def conjugate_transpose(matrix_a):
     Returns:
         The conjugated transpose of the input matrix.
     """
-    index: list = [[0 for element in range(len(matrix_a[0]))] for index in range(len(matrix_a))]
-    ct: list = [[0 for element in range(len(matrix_a[0]))] for index in range(len(matrix_a))]
+    result: list = [[0 for element in range(len(matrix_a[0]))] for index in range(len(matrix_a))]
+    temp: list = [[0 for element in range(len(matrix_a[0]))] for index in range(len(matrix_a))]
     for x in range(len(matrix_a[0])):
         for y in range(len(matrix_a[0])):
-            index[x][y] = matrix_a[x][y].conjugate()
+            result[x][y] = matrix_a[x][y].conjugate()
     for index in range(len(matrix_a[0])):
         for element in range(len(matrix_a)):
-            ct[index][element] = index[element][index]
-    return ct
-
+            temp[index][element] = result[index][element]
+    return temp
 
 
 def deep_copy(matrix_a: list[list]) -> list[list]:
@@ -336,3 +335,5 @@ def householder(matrix_a: list[list]) -> list:
     for index in range(1, len(Q_list)):
         Q = LA.mat_multi(Q, conjugate_transpose(Q_list[index]))
     return [Q, R]
+
+print(householder([[1, 0], [-5, -5]]))
