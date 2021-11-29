@@ -1,10 +1,12 @@
 import LS
 import pytest
 
+
 matrix_01 = [[1, 2, 3], [1, 1, 2], [2, 1, 2]]
 vector_01 = [3, 3, 1]
 matrix_02 = [[2, 0, 0], [1, 3, 0], [2, 4, 5]]
 vector_02 = [1, 2, 3]
+
 
 def test_backsub():
     assert LS.backsub(matrix_01, vector_01) == [-0.5, 2.5, 0.5]

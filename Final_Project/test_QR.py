@@ -1,6 +1,7 @@
 import QR
 import pytest
 
+
 matrix_01 = [[1, 0, 1], [2, 1, 0]]
 matrix_02 = [[1, 0], [-5, -5]]
 matrix_03 = [[2, 2, 1], [-2, 1, 2], [18, 0, 0]]
