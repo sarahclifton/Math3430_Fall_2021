@@ -1,27 +1,4 @@
-"""
-This homework is due on 10/15/2021 by 11:59pm. 
-
-
-For this assignment you will be writing a python script to be named LA.py. In
-this script you will need to write 6 functions. Every function must 
-
-1) Have a doc string.
-
-2) Have type annotations
-
-3) Be tested using unit testing. 
-
-Once you have finished writing LA.py you will upload it to the same github repo
-you used for HW02. The functions you need to write are 
-"""
-
-#0
-"""
-A function which takes as it's arguments two vectors stored as
-lists and returns their sum, also stored as a list.
-"""
-
-def add_vectors(vector_a: list[float], vector_b: list[float]) -> list[float]:
+def add_vectors(vector_a: list, vector_b: list) -> list:
     """Adds the two input vectors.
 
     Creates a result vector stored as a list of 0's the same length as the input. 
@@ -41,14 +18,6 @@ def add_vectors(vector_a: list[float], vector_b: list[float]) -> list[float]:
         result[index] = vector_a[index] + vector_b[index]
     return result
 
-# End Example
-# Note that you must add unit tests for problem 0!!!!!
-
-#1
-"""
-A function which takes as it's arguments a vector stored as a list and a
-scalar, and returns the scalar vector multiplication stored as a list.
-"""
 
 def scalar_vec_multi(vector: list, scalar: float) -> list:
     """Multplies the input scalar and the input vector.
@@ -69,17 +38,8 @@ def scalar_vec_multi(vector: list, scalar: float) -> list:
         result.append(vector[index] * scalar)
     return result
 
-#2
-"""
-A function which takes as it's arguments a matrix, stored as a list of lists
-where each component list represents a column of the matrix(you cannot represent
-the matrix as a list of rows!) and a scalar and returns their product, also
-stored as a list of lists where each component list represents a column. You
-must use the function from problem #1. Failure to use this function will result
-in an earned grade of 0.
-"""
 
-def scalar_mat_multi(matrix: list[list[float]], scalar: float) -> list[list[float]]:
+def scalar_mat_multi(matrix: list[list], scalar: float) -> list[list]:
     """Multiplies the input scalar and the input matrix.
 
     Creates a result matrix stored as a list of lists of 0's the same length as the input.
@@ -99,16 +59,8 @@ def scalar_mat_multi(matrix: list[list[float]], scalar: float) -> list[list[floa
         result[index] = scalar_vec_multi(matrix[index], scalar)
     return result
 
-#3
-"""
-A function which takes as it's arguments two matrices stored as lists of
-lists where each component list represents a column vector, and returns their
-sum stored in the same manner. You must use the function in problem #0 in your
-method here. Failure to use the function from problem #0 will reuslt in an
-earned grade of 0.
-"""
 
-def add_matrix(matrix_a: list[list[float]], matrix_b: list[list[float]]) -> list[list[float]]:
+def add_matrix(matrix_a: list[list], matrix_b: list[list]) -> list[list]:
     """Adds the two input matrices.
 
     Creates a result matrix stored as a list of list of 0's the same length as the input.
@@ -130,19 +82,8 @@ def add_matrix(matrix_a: list[list[float]], matrix_b: list[list[float]]) -> list
         result.append(x)
     return result
 
-#4
-"""
-A function which takes as it's argument a matrix (stored as a list of lists,
-each component list representing a column vector), and a vector stored as a
-list, and returns the matrix-vector product. This function must compute the
-matrix-vector product by calculating the neccessary linear combination of the
-input matrices columns. All other methods of matrix-vector multiplication are
-strictly forbidden and their use will result in a grade of 0. For this function
-you must use the functions written for problem #0 and problem #1. Failure to use
-these functions will result in an earned grade of 0.
-"""
 
-def mat_vec_multi(matrix: list[float], vector:list[float]) -> list[list[float]]:
+def mat_vec_multi(matrix: list[list], vector: list) -> list[list]:
     """Multiplies the input vector and the input matrix.
 
     Creates a result matrix stored as a list of list of 0's the same length as the input.
@@ -166,17 +107,8 @@ def mat_vec_multi(matrix: list[float], vector:list[float]) -> list[list[float]]:
         result = add_vectors(result, mat_result[index])
     return result
 
-#5
-"""
-A function which takes as it's arguments two matrices, each stored as a list
-of lists where each component list represents a column vector, and returns their
-product stored in the same manner. To earn any credit on this problem you must
-use the function from problem #4 to implement the matrix-vector method of
-matrix-matrix multiplication. Use of any other method will result in an earned
-grade of 0.
-"""
 
-def mat_multi(matrix_a: list[float], matrix_b: list[float]) -> list[list[float]]:
+def mat_multi(matrix_a: list[list], matrix_b: list[list]) -> list[list]:
     """Multiplies the two input matrices.
 
     Creates a result matrix, called result, as an empty list as a copy of matrix. 
@@ -197,24 +129,6 @@ def mat_multi(matrix_a: list[float], matrix_b: list[float]) -> list[list[float]]
     return result
 
 
-
-#HW_04
-
-"""
-This assignment is due by 11:59pm on 10/22/2021. 
-
-For this assignment you will be adding functinons to the LA.py script from HW03.
-All functions must satisfy the same requirements as in HW03. The functions you
-will need to add are
-"""
-
-#1
-"""
-A function which takes a scalar as it's input and returns it's absolute
-value. Note that this function must be able to take both real numbers and
-complex numbers as input!!!
-"""
-
 def absolute_value(scalar: complex or float) -> complex or float:
     """Takes the input scalar and computes the absolute value of it.
 
@@ -230,20 +144,8 @@ def absolute_value(scalar: complex or float) -> complex or float:
     result: complex or float = ((scalar.real**2 + scalar.imag**2)**(1/2))
     return result
 
-#2
-"""
-A function which takes the as it's arguments
 
-1) A vector stored as a list.
-
-2) A float valued scalar, set to default as 2. 
-
-and returns the p-norm of the input vector. Which p-norm must be determined using
-the float valued scalar input. If no argument is given, it should default to
-2.
-"""
-
-def p_norm(vector:list[float], p: int = 2) -> float:
+def p_norm(vector: list, p: int = 2) -> float:
     """This function computes the p-norm of the input vector. The p-norm is 
     defaulted to 2.
 
@@ -271,13 +173,8 @@ def p_norm(vector:list[float], p: int = 2) -> float:
     result = result**(abs(1/p))
     return result
 
-#3
-"""
-A function which takes as it's argument a vector stored as a list and
-returns the infinity norm of the input vector.
-"""
 
-def infinity_norm(vector: list[float]) -> float:
+def infinity_norm(vector: list) -> float:
     """This function computes the infinity norm of the input vector.
 
     First we set the result to an empty vector and we overwrite every
@@ -297,24 +194,8 @@ def infinity_norm(vector: list[float]) -> float:
         result.append(abs(vector[element]))
     return float(max(result))
 
-#4
-"""
-A function which takes as it's arguments
 
-1) A vector stored as a list.
-
-2) An float valued scalar, set to default as 2.
-
-3) A boolean value, set to default as False.
-
-The function will return the p-norm of the input vector. If the boolean value is
-given as True, the function will return the infinity norm of the input vector.
-Otherwise it will return the p-norm of the vector corresponding to the float 
-scalar argument. This function must use the functions from problem #2 and
-problem #3 to earn credit. 
-"""
-
-def input_vector_norm(vector: list[float], p: float = 2, boolean: bool = False) -> float:
+def input_vector_norm(vector: list, p: float = 2, boolean: bool = False) -> float:
     """Computes the p-norm, which is the default, or the infinity norm.
 
     If the boolean is true, then we comput the infinity norm and return the result.
@@ -335,12 +216,6 @@ def input_vector_norm(vector: list[float], p: float = 2, boolean: bool = False) 
     else: 
         return float(infinity_norm(vector))
 
-#5
-"""
-A function which takes as it's arguments two vectors, stored as lists. This
-function then returns the inner product of these vectors. Your function must be
-able to handle complex numbers!
-"""
 
 def inner_product(vector_a: list[complex or float], vector_b: list[complex or float]) -> complex or float:
     """Computes the inner product of the two input vectors.

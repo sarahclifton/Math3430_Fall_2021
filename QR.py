@@ -1,8 +1,6 @@
 import LA
 
 
-#HW 05
-
 def unstable_gram_schmidt(matrix_a: list[list]) -> list[list]: 
     """Computes QR factorization using the unstable Gram-Schmidt process. 
 
@@ -78,8 +76,6 @@ def stable_gram_schmidt(matrix_a: list[list]) -> list[list]:
     return [Q, R]
 
 
-#HW 06
-
 def orthonormalize(matrix_a: list[list]) -> list[list]:
     """Orthonormalizes a list of vectors.
 
@@ -103,8 +99,6 @@ def orthonormalize(matrix_a: list[list]) -> list[list]:
     return result
 
 
-#HW 07
-
 def conjugate(scalar: float) -> float:
     """Calculates the conjugate of the input scalar
 
@@ -122,7 +116,7 @@ def conjugate(scalar: float) -> float:
     return result
 
 
-def conjugate_transpose(matrix_a):
+def conjugate_transpose(matrix_a: list[list]) -> list[list]:
     """Calculates the conjugate transpose of the input matrix.
 
     First, we create two matrices in which we fill with zeros.
@@ -220,13 +214,13 @@ def identity(matrix_a: int) -> int:
     Returns:
         The identity matrix.
     """
-    identity: list = [[0 for element in range(matrix_a)] for index in range(matrix_a)]
+    identity = [[0 for element in range(matrix_a)] for index in range(matrix_a)]
     for x in range(matrix_a):
         identity[x][x] = 1
     return identity
 
 
-def vec_multi(vector_a, vector_b):
+def vec_multi(vector_a: list, vector_b: list) -> list[list]:
     """Calculates the product of two vectors
 
     First we set our result equal to an index set.
