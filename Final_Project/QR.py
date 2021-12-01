@@ -112,7 +112,7 @@ def conjugate(scalar: float) -> float:
     Returns:
         The conjugated scalar
     """
-    result = scalar.real + -scalar.imag*1j
+    result: float = scalar.real + -scalar.imag*1j
     return result
 
 
@@ -154,7 +154,7 @@ def deep_copy(matrix_a: list[list]) -> list[list]:
     Returns:
         A deep copy of the input matrix.
     """
-    index = [[0 for element in range(len(matrix_a[0]))] for index in range(len(matrix_a))]
+    index: list[list] = [[0 for element in range(len(matrix_a[0]))] for index in range(len(matrix_a))]
     for x in range(len(matrix_a[0])):
         for y in range(len(matrix_a[0])):
             index[x][y] = matrix_a[x][y]
@@ -195,9 +195,9 @@ def V_builder(vector_a: list) -> list:
     Returns:
         The reflection of the input vector.
     """
-    a = [0 for element in range(len(vector_a))]
+    a: list = [0 for element in range(len(vector_a))]
     a[0] = 1
-    V = LA.add_vectors(vector_a, LA.scalar_vec_multi(a, sign(vector_a[0])*LA.p_norm(vector_a)))
+    V: list = LA.add_vectors(vector_a, LA.scalar_vec_multi(a, sign(vector_a[0])*LA.p_norm(vector_a)))
     return V
 
 
@@ -214,7 +214,7 @@ def identity(matrix_a: int) -> int:
     Returns:
         The identity matrix.
     """
-    identity = [[0 for element in range(matrix_a)] for index in range(matrix_a)]
+    identity: list[list] = [[0 for element in range(matrix_a)] for index in range(matrix_a)]
     for x in range(matrix_a):
         identity[x][x] = 1
     return identity
@@ -258,9 +258,9 @@ def F_builder(vector_a: list) -> list:
     Returns:
         The F_k value
     """
-    s = -2/(LA.p_norm(vector_a))**2
-    x = LA.scalar_mat_multi(vec_multi(vector_a, vector_a), s)
-    y = LA.add_matrix(identity(len(vector_a)), x)
+    s: float = -2/(LA.p_norm(vector_a))**2
+    x: list[list] = LA.scalar_mat_multi(vec_multi(vector_a, vector_a), s)
+    y: list[list] = LA.add_matrix(identity(len(vector_a)), x)
     return y
 
 
@@ -295,7 +295,7 @@ def Q_builder(matrix_a: list[list], k: int) -> list:
                     Q[index][element] = matrix_a[k+index][k+element]
     v = V_builder(Q[0])
     f = F_builder(v)
-    Q_builder = identity(len(matrix_a))
+    Q_builder: int = identity(len(matrix_a))
     for index in range(k, len(Q_builder)):
         for element in range(k, len(Q_builder)):
             Q_builder[index][element] = f[index-k][element-k]

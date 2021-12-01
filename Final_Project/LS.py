@@ -51,7 +51,7 @@ def least_squares(matrix_a: list[list], vector_a: list) -> list:
         The least squares matrix
     """
     Q, R = QR.householder(matrix_a)
-    Q_1 = QR.conjugate_transpose(Q)
-    Q_2 = LA.mat_vec_multi(Q_1, vector_a)
-    result = backsub(R, Q_2)
+    Q_1: list[list] = QR.conjugate_transpose(Q)
+    Q_2: list[list] = LA.mat_vec_multi(Q_1, vector_a)
+    result: list = backsub(R, Q_2)
     return result

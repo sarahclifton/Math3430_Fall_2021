@@ -102,7 +102,7 @@ def mat_vec_multi(matrix: list[list], vector: list) -> list[list]:
     mat_result: list[list[float]] = [0 for elements in matrix]
     for index in range(len(vector)):
         mat_result[index] = scalar_vec_multi(matrix[index], vector[index])
-    result = add_vectors(mat_result[0], mat_result[1])
+    result: list = add_vectors(mat_result[0], mat_result[1])
     for index in range(2, len(mat_result)):
         result = add_vectors(result, mat_result[index])
     return result
