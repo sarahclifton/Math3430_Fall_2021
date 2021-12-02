@@ -1,0 +1,29 @@
+For this homework you will not need to write any code. Instead you will write a
+short paragraph answering the below question. You will save this paragraph in a
+text-file called HW10 and upload it to your github repo.
+
+
+Question 01)
+
+Briefly describe a computing project you would find interesting to work on in
+the future. This project may be
+
+1) Implementing existing mathematics as algorithms, as we have done in this
+course.
+
+2) A simple project to learn another computing language.
+
+3) An addition to the linear algebra package from your final project. 
+
+4) A project to learn more complex tools in python. (Such as numpy, scipy,
+pandas, machine learning packages such as tensorflow, etc...)
+
+5) A computer application (such as a video game, art tools, music editor, etc..)
+
+6) Any other type of project which I have failed to mention here. 
+
+
+I feel like working on a video game would be so much fun. I have so many ideas that would be cool to see as a video game. I think it would be cool to write the code for it and see how it translates into the video game. Implementing the knowledge from this class will be useful for creating the code for a video game.
+
+
+Your answer does not need to be exceptionally detailed. Just a short paragraph.
