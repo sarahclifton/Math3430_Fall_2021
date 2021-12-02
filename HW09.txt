@@ -12,7 +12,11 @@ point" representation, where the gap is constant.
 What is an advantage or disadvantage to using floating point instead of fixed
 point?
 
-The difference between the floating point and fixed-point numbers is that floating-point numbers have a gap between a number and its floating-point representation increases with the magnitude of the number. A fixed-point number has a gap that is always constant. An advantage for using a floating point rather than a fixed point is that it provides a very large range. Even though floating points are good for when one needs to express numbers on a varying scale, a disadvantage is that it sacrifices precision to gain the range of scale. 
+The difference between the floating point and fixed-point numbers is that floating-point numbers have a gap between a number and its
+floating-point representation increases with the magnitude of the number. A fixed-point number has a gap that is always constant. An
+advantage for using a floating point rather than a fixed point is that it provides a very large range. Even though floating points
+are good for when one needs to express numbers on a varying scale, a disadvantage is that it sacrifices precision to gain the range
+of scale. 
 
 Note: Your answer is only expected to be a short paragraph. You are not expected to
 prove anything! 
