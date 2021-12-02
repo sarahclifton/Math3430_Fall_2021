@@ -24,6 +24,6 @@ pandas, machine learning packages such as tensorflow, etc...)
 
 Your answer does not need to be exceptionally detailed. Just a short paragraph.
 
-I feel like working on a video game would be so much fun. I have so many ideas that would be cool to see as a video game. I think it
-would be cool to write the code for it and see how it translates into the video game. Implementing the knowledge from this class
-will be useful for creating the code for a video game.
+I feel like working on a video game would be so much fun. I have so many ideas that would be cool to see as a video game. 
+I think it would be cool to write the code for it and see how it translates into the video game. Implementing the knowledge 
+from this class will be useful for creating the code for a video game.
